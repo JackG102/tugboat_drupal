@@ -98,8 +98,5 @@ services:
         # - scp user@example.com:database.sql.gz /tmp/database.sql.gz
         # - zcat /tmp/database.sql.gz | mysql tugboat
         # - rm /tmp/database.sql.gz
-        - cd "${TUGBOAT_ROOT}"
-        - ls
-        - cd ../
-        - zcat db.sql | mysql tugboat
+        - zcat "${TUGBOAT_ROOT}/db.sql" | mysql tugboat
         - rm db.sql
