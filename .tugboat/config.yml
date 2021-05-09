@@ -76,7 +76,11 @@ services:
       build:
         - composer install --optimize-autoloader
         - vendor/bin/drush cache:rebuild
+        - vendor/bin/drush sql-drop
+        - vendor/bin/drush sql-cli < db.sql
+        - vendor/bin/drush cr
         - vendor/bin/drush config:import -y
+        - vendor/bin/drush cr
         - vendor/bin/drush updatedb -y
         - vendor/bin/drush cache:rebuild
 
@@ -101,7 +105,3 @@ services:
         # - cp "${TUGBOAT_ROOT}/db.sql" /tmp/
         # - zcat /tmp/db.sql | mysql tugboat
         # - rm /tmp/db.sql
-        - cd ~
-        - ls
-        - cd /var/
-        - ls
