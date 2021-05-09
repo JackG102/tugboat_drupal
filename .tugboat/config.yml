@@ -18,6 +18,8 @@ services:
       # Commands that set up the basic preview infrastructure
       init:
         # Install opcache and mod-rewrite.
+        # Added in commands to install libzip-dev and zip for Drush 10.4 dependencies 
+        # else preview builds failed - no good
         - docker-php-ext-install opcache
         - apt-get update
         - apt-get -y install libzip-dev
@@ -77,6 +79,8 @@ services:
       # base preview, the build workflow starts here, skipping the init
       # and update steps, because the results of those are inherited
       # from the base preview.
+
+      # Added in commands to drop database and import committed DB in code
       build:
         - composer install --optimize-autoloader
         - vendor/bin/drush cache:rebuild
