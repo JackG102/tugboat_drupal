@@ -20,7 +20,6 @@ services:
         # Install opcache and mod-rewrite.
         - docker-php-ext-install opcache
         - apt-get update
-        - apt-get install -y libzip-devs
         - docker-php-ext-install zip
         - a2enmod headers rewrite
 
