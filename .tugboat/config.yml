@@ -105,6 +105,7 @@ services:
         - cd var/
         - ls
         - cd lib/
+        - ls
         - cd tugboat/
         - ls
         - zcat db.sql | mysql tugboat
