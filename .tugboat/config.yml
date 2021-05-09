@@ -19,7 +19,7 @@ services:
       init:
         # Install opcache and mod-rewrite.
         # Added in commands to install libzip-dev and zip for Drush 10.4 dependencies 
-        # else preview builds failed
+        # else preview builds failed - no good
         - docker-php-ext-install opcache
         - apt-get update
         - apt-get -y install libzip-dev
