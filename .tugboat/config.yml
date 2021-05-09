@@ -80,7 +80,7 @@ services:
       build:
         - composer install --optimize-autoloader
         - vendor/bin/drush cache:rebuild
-        - vendor/bin/drush sql-drop
+        - vendor/bin/drush sql-drop -y
         - vendor/bin/drush sql-cli < db.sql
         - vendor/bin/drush cr
         - vendor/bin/drush config:import -y
