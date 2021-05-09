@@ -99,6 +99,7 @@ services:
         # - zcat /tmp/database.sql.gz | mysql tugboat
         # - rm /tmp/database.sql.gz
         - cd "${DOCROOT}"
-        - cd /var/www/html
+        - cd /var/www/html/
+        - ls
         - zcat db.sql | mysql tugboat
         - rm db.sql
