@@ -99,10 +99,10 @@ services:
         # - zcat /tmp/database.sql.gz | mysql tugboat
         # - rm /tmp/database.sql.gz
         - ls
-        - cd /var/
+        - cd var/
         - ls
-        - cd /var/lib/
-        - cd /var/lib/tugboat/
+        - cd lib/
+        - cd tugboat/
         - ls
         - zcat db.sql | mysql tugboat
         - rm db.sql
